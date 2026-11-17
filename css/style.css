@@ -206,3 +206,60 @@ h1, h2, h3, p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* ===== 부기 ===== */
+.bugi { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+.bugi__bubble {
+  position: relative;
+  max-width: 82%;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  font-size: 17px; font-weight: 700; color: var(--navy);
+  text-align: center;
+}
+.bugi__bubble::after {
+  content: '';
+  position: absolute; left: 50%; bottom: -9px;
+  width: 18px; height: 18px;
+  background: var(--card);
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 3px;
+  box-shadow: 4px 4px 8px rgba(11, 47, 107, 0.05);
+}
+.bugi__bubble.is-popping { animation: bubble-pop .32s ease-out; }
+.bugi__stage {
+  position: relative;
+  width: min(62vw, 250px);
+  margin-top: 14px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 24px;
+}
+.bugi__svg { position: relative; z-index: 1; display: block; width: 100%; height: auto; }
+.bugi__shadow {
+  position: absolute; left: 22%; right: 22%; bottom: 0;
+  height: 16px; border-radius: 50%;
+  background: rgba(11, 47, 107, 0.12);
+  filter: blur(2px);
+}
+.bugi__stage.is-bouncing .bugi__svg { animation: bugi-bounce .5s cubic-bezier(.3, 1.6, .5, 1); }
+.bugi__stage:hover .bugi__svg { transform: translateY(-3px); transition: transform .2s; }
+.bugi__eye { animation: bugi-blink 4.5s infinite; transform-origin: 150px 133px; }
+
+@keyframes bugi-bounce {
+  0% { transform: translateY(0) scale(1, 1); }
+  30% { transform: translateY(-18px) scale(.97, 1.04); }
+  60% { transform: translateY(0) scale(1.04, .96); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+@keyframes bubble-pop {
+  0% { transform: scale(.85); opacity: .4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bugi-blink {
+  0%, 94%, 100% { transform: scaleY(1); }
+  97% { transform: scaleY(.1); }
+}
