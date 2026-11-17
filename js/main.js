@@ -1,4 +1,6 @@
 import { resolveScreen } from './lib/router.js';
+import { formatTerm, formatAffiliation } from './lib/profile.js';
+import { user } from '../data/user.js';
 
 // 화면 이름 → 모듈 로더. 화면 모듈은 render(root) 를 export 한다.
 const LOADERS = {
@@ -53,5 +55,16 @@ navButtons.forEach((b) =>
 topInfo.addEventListener('click', () => { location.hash = 'home'; });
 window.addEventListener('hashchange', () => show(location.hash));
 
-topInfo.textContent = 'e-Advisor';
+function renderTopInfo() {
+  topInfo.innerHTML = '';
+  const term = document.createElement('h1');
+  term.className = 'top-info__term';
+  term.textContent = formatTerm(user);
+  const org = document.createElement('p');
+  org.className = 'top-info__org';
+  org.textContent = formatAffiliation(user);
+  topInfo.append(term, org);
+}
+
+renderTopInfo();
 show(location.hash);
