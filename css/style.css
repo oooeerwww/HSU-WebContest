@@ -316,3 +316,43 @@ h1, h2, h3, p { margin: 0; }
 .essay__form textarea:focus { outline: none; border-color: var(--navy-700); }
 .essay__actions { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
 .essay__count { margin-right: auto; }
+
+/* ===== 내 정보 ===== */
+.profile { display: flex; align-items: center; gap: 14px; }
+.profile__avatar {
+  flex: none;
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), #3A6FC4);
+  color: #fff; font-weight: 800; font-size: 17px;
+}
+.profile__name { font-size: 18px; font-weight: 800; }
+.profile__meta { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.stats .card { margin-bottom: 14px; }
+.stat__label { font-size: 13px; font-weight: 600; color: var(--ink-3); }
+.stat__value { font-size: 28px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; margin: 2px 0 8px; }
+.stat__value small { font-size: 14px; font-weight: 600; color: var(--ink-3); }
+.gpa-bars { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; height: 160px; }
+.gpa-bar { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.gpa-bar__value { font-size: 12px; font-weight: 700; color: var(--navy); }
+.gpa-bar__track { position: relative; flex: 1; width: 22px; border-radius: 999px; background: var(--navy-100); overflow: hidden; }
+.gpa-bar__track > span { position: absolute; left: 0; right: 0; bottom: 0; border-radius: inherit; background: linear-gradient(0deg, var(--navy), #4C7DD0); }
+.gpa-bar__label { font-size: 12px; color: var(--ink-3); }
+.term { border-top: 1px solid var(--line); }
+.term:first-of-type { border-top: 0; }
+.term summary {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 0; min-height: 44px;
+  font-weight: 700; cursor: pointer; list-style: none;
+}
+.term summary::-webkit-details-marker { display: none; }
+.term summary::after { content: '▾'; color: var(--ink-3); margin-left: 8px; transition: transform .2s; }
+.term[open] summary::after { transform: rotate(180deg); }
+.term summary span:first-child { margin-right: auto; }
+.course { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 15px; }
+.grade { min-width: 36px; text-align: center; padding: 2px 8px; border-radius: 8px; font-size: 14px; background: var(--navy-100); color: var(--navy); }
+.grade--A { background: #DDF3E8; color: #1F7A50; }
+.grade--C, .grade--D, .grade--F { background: #FDE6E4; color: #B3362F; }
+.grade--P { background: #EEF1F6; color: var(--ink-2); }
