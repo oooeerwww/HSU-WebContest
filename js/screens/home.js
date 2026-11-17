@@ -1,11 +1,13 @@
 import { renderBugi } from '../bugi.js';
 import { getJacket } from '../lib/jacket.js';
-import { createDialogue } from '../lib/dialogue.js';
+import { createDialogue, situationalLines } from '../lib/dialogue.js';
+import { pointProgress } from '../lib/extracurricular.js';
 import { loadMemo, saveMemo, pickEssay } from '../lib/memo.js';
 import { user } from '../../data/user.js';
 import { jackets } from '../../data/jackets.js';
 import { dialogues } from '../../data/dialogues.js';
 import { tips } from '../../data/tips.js';
+import { records } from '../../data/extracurricular.js';
 
 // localStorage 자체에 접근만 해도 예외가 나는 브라우저가 있어 호출 시점까지 미룬다.
 const storage = {
@@ -20,7 +22,8 @@ export function render(root) {
   root.append(bugiEl, essayEl);
 
   const bugi = renderBugi(bugiEl, getJacket(user, jackets));
-  const dialogue = createDialogue(dialogues);
+  const { remaining } = pointProgress(records);
+  const dialogue = createDialogue([...dialogues, ...situationalLines({ remainingPoints: remaining })]);
   bugi.setSpeech('안녕!');
   dialogue.next(); // 첫 대사는 이미 보여줬으니 넘긴다
   bugi.onClick(() => bugi.setSpeech(dialogue.next()));

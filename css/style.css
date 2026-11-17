@@ -432,3 +432,25 @@ h1, h2, h3, p { margin: 0; }
 .track__match small { font-size: 14px; }
 .track__desc { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); }
 .track__reasons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+/* ===== 비교과 ===== */
+.points { display: flex; align-items: center; gap: 18px; }
+.ring { flex: none; width: 116px; height: 116px; }
+.ring__track { fill: none; stroke: var(--navy-100); stroke-width: 12; }
+.ring__bar {
+  fill: none; stroke: var(--navy); stroke-width: 12; stroke-linecap: round;
+  transform: rotate(-90deg); transform-origin: 60px 60px;
+  transition: stroke-dashoffset .8s ease;
+}
+.ring__pct { font-size: 22px; font-weight: 800; fill: var(--navy); }
+.ring__sub { font-size: 11px; font-weight: 600; fill: var(--ink-3); }
+.points .stat__value { margin: 0 0 4px; }
+.points__left { font-size: 14px; color: var(--ink-2); }
+.points__left strong { color: var(--accent); }
+.program__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.program__points { font-weight: 800; color: var(--navy); }
+.program__name { font-size: 16px; margin: 0 0 4px; }
+.program__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.tag--plain { background: #EEF1F6; color: var(--ink-2); }
+.record { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-size: 15px; }
+.record strong { color: var(--navy); }
