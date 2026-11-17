@@ -19,3 +19,9 @@ export function recommendPrograms(programs, records, interests, today) {
     .filter((p) => !done.has(p.id) && daysLeft(p.endDate, today) >= 0)
     .sort((a, b) => overlap(b) - overlap(a) || b.points - a.points);
 }
+
+/** 'upcoming' (시작 전) | 'ongoing' (종료일 포함 진행 중) | 'ended' */
+export function programStatus(program, today) {
+  if (daysLeft(program.startDate, today) > 0) return 'upcoming';
+  return daysLeft(program.endDate, today) >= 0 ? 'ongoing' : 'ended';
+}

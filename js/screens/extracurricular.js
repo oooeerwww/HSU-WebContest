@@ -1,5 +1,5 @@
 import { pageHead, esc } from '../ui.js';
-import { pointProgress, recommendPrograms, GRADUATION_POINTS } from '../lib/extracurricular.js';
+import { pointProgress, recommendPrograms, programStatus, GRADUATION_POINTS } from '../lib/extracurricular.js';
 import { daysLeft } from '../lib/activities.js';
 import { user } from '../../data/user.js';
 import { programs, records } from '../../data/extracurricular.js';
@@ -13,7 +13,7 @@ function programCard(p, today, interests) {
   return `
     <article class="card program">
       <div class="program__top">
-        <span class="tag">${esc(p.type)}</span>
+        <span><span class="tag">${esc(p.type)}</span>${programStatus(p, today) === 'upcoming' ? ' <span class="tag tag--accent">모집 예정</span>' : ''}</span>
         <span class="program__points">+${p.points}P</span>
       </div>
       <h3 class="program__name">${esc(p.name)}</h3>
@@ -52,7 +52,7 @@ export function render(root) {
     <p class="muted screen-intro">관심사 ${user.interests.map((t) => `#${esc(t)}`).join(' ')} 와 겹치는 프로그램을 먼저 보여드려요.</p>
     ${recs.length ? recs.map((p) => programCard(p, today, user.interests)).join('') : '<p class="empty">추천할 프로그램이 없어요.</p>'}
 
-    <h2 class="section-title">진행 중인 프로그램</h2>
+    <h2 class="section-title">진행 중 · 예정 프로그램</h2>
     <div class="chips" role="group" aria-label="유형 필터">
       ${types.map((t, i) => `<button type="button" class="chip ${i === 0 ? 'is-active' : ''}" data-type="${esc(t)}" aria-pressed="${i === 0}">${t === 'all' ? '전체' : esc(t)}</button>`).join('')}
     </div>

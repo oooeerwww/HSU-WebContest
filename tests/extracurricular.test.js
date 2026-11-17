@@ -28,3 +28,12 @@ test('program ending today is still recommended', () => {
   const today = new Date('2026-11-17T15:00:00');
   assert.equal(recommendPrograms([{ id: 'x', points: 10, endDate: '2026-11-17', tags: [] }], [], [], today).length, 1);
 });
+
+import { programStatus } from '../js/lib/extracurricular.js';
+test('program status is upcoming before start, ongoing through end day, ended after', () => {
+  const p = { startDate: '2026-12-01', endDate: '2026-12-31' };
+  assert.equal(programStatus(p, new Date('2026-11-17T12:00:00')), 'upcoming');
+  assert.equal(programStatus(p, new Date('2026-12-01T09:00:00')), 'ongoing');
+  assert.equal(programStatus(p, new Date('2026-12-31T23:00:00')), 'ongoing');
+  assert.equal(programStatus(p, new Date('2027-01-01T00:00:00')), 'ended');
+});
