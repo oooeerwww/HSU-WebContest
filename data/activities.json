@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "id": "act-01", "title": "청년 디지털 아이디어 공모전", "organizer": "(샘플) 디지털 진흥원", "field": "공모전", "deadline": "2026-12-12", "url": "#" },
+    { "id": "act-02", "title": "공공데이터 활용 창업경진대회", "organizer": "(샘플) 공공데이터 센터", "field": "공모전", "deadline": "2027-02-27", "url": "#" },
+    { "id": "act-03", "title": "AI 서비스 기획 챌린지", "organizer": "(샘플) AI 협회", "field": "공모전", "deadline": "2027-01-31", "url": "#" },
+    { "id": "act-04", "title": "IT 기업 대학생 서포터즈 12기", "organizer": "(샘플) 테크기업", "field": "서포터즈", "deadline": "2026-11-28", "url": "#" },
+    { "id": "act-05", "title": "서울시 청년 기자단", "organizer": "(샘플) 청년 미디어센터", "field": "서포터즈", "deadline": "2027-02-14", "url": "#" },
+    { "id": "act-06", "title": "지역아동센터 코딩 교육 봉사", "organizer": "(샘플) 사회복지재단", "field": "봉사", "deadline": "2026-12-05", "url": "#" },
+    { "id": "act-07", "title": "해외 IT 봉사단 동계 파견", "organizer": "(샘플) 국제협력단", "field": "봉사", "deadline": "2027-01-20", "url": "#" },
+    { "id": "act-08", "title": "클라우드 개발자 부트캠프", "organizer": "(샘플) 클라우드 아카데미", "field": "교육", "deadline": "2027-03-03", "url": "#" },
+    { "id": "act-09", "title": "데이터 분석 실무 캠프", "organizer": "(샘플) 데이터 진흥센터", "field": "교육", "deadline": "2026-12-20", "url": "#" },
+    { "id": "act-10", "title": "동계 SW 인턴십", "organizer": "(샘플) 소프트웨어 기업", "field": "인턴", "deadline": "2026-12-01", "url": "#" },
+    { "id": "act-11", "title": "스타트업 프론트엔드 인턴", "organizer": "(샘플) 스타트업", "field": "인턴", "deadline": "2027-03-31", "url": "#" },
+    { "id": "act-12", "title": "대학생 UX 리서치 공모전", "organizer": "(샘플) 디자인 협회", "field": "공모전", "deadline": "2026-10-31", "url": "#" }
+  ]
+}

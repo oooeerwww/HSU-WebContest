@@ -356,3 +356,12 @@ h1, h2, h3, p { margin: 0; }
 .grade--A { background: #DDF3E8; color: #1F7A50; }
 .grade--C, .grade--D, .grade--F { background: #FDE6E4; color: #B3362F; }
 .grade--P { background: #EEF1F6; color: var(--ink-2); }
+
+/* ===== 대외활동 ===== */
+.screen-intro { margin: -4px 0 12px; font-size: 14px; }
+.activity { padding: 16px 18px; }
+.activity__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.activity__title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.dday { font-size: 13px; font-weight: 800; color: var(--navy-700); }
+.dday--soon { color: var(--warn); }
+.empty .btn { margin-top: 12px; }
