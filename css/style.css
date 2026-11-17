@@ -263,3 +263,56 @@ h1, h2, h3, p { margin: 0; }
   0%, 94%, 100% { transform: scaleY(1); }
   97% { transform: scaleY(.1); }
 }
+
+/* ===== 에세이 문구 카드 ===== */
+.essay { margin: 22px 0 8px; }
+.essay__card {
+  position: relative;
+  margin: 0;
+  padding: 22px 20px 16px;
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.essay__card::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+  background: linear-gradient(var(--navy), var(--sky));
+}
+.essay__mark {
+  position: absolute; right: 14px; top: -14px;
+  font-size: 96px; line-height: 1; font-weight: 900;
+  color: var(--navy-100);
+  font-family: Georgia, serif;
+}
+.essay__text {
+  position: relative;
+  margin: 0;
+  font-size: 19px; font-weight: 700; line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.essay__foot { display: flex; align-items: center; justify-content: space-between; margin-top: 14px; }
+.essay__edit {
+  min-height: 36px; padding: 0 4px;
+  border: 0; background: none;
+  color: var(--navy-700); font-size: 14px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 3px;
+  cursor: pointer;
+}
+.essay__notice:empty { display: none; }
+.essay__notice { margin-top: 8px; font-size: 13px; color: var(--warn); }
+.essay__label { display: block; font-size: 14px; font-weight: 700; color: var(--ink-2); margin-bottom: 8px; }
+.essay__form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  font: inherit; font-size: 17px; font-weight: 600;
+  resize: none;
+  color: var(--ink);
+}
+.essay__form textarea:focus { outline: none; border-color: var(--navy-700); }
+.essay__actions { display: flex; align-items: center; gap: 8px; margin-top: 10px; }
+.essay__count { margin-right: auto; }
